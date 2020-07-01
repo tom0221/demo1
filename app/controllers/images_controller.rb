@@ -1,10 +1,17 @@
 class ImagesController < ApplicationController
 
+	def new
+		@book = Book.new
+	end
+
 	def create
 		@image = Image.new(image_params)
 		@image.user_id = current_user.id
-		@image.save
-		redirect_to request.referer
+		if @image.save
+			redirect_to images_path
+		else
+			render :index
+		end
 	end
 
 	def index
@@ -31,6 +38,6 @@ class ImagesController < ApplicationController
 
 	private
 	def image_params
-		params.require(:image).permit(:title, :boby, :image)
+		params.require(:image).permit(:title, :body, :image)
 	end
 end
