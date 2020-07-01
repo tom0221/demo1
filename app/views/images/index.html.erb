@@ -1,1 +1,27 @@
 <p>imagesのindexページ予定</p>
+
+
+<!-- bootstrapでグリッド3 -->
+<%= form_for(@image) do |f| %>
+
+	<% if @image.errors.any? %>
+		<%= @image.errors.count %>件のエラーが発生しました。
+		<%= @image.errors.full_messages.each do |message| %>
+			<%= message %>
+		<% end %>
+	<% end %>
+
+	<%= f.attachment_field :image %>
+	<%= f.text_field :title %>
+	<%= f.text_area :boby %>
+	<%= f.submit %>
+
+<% end %>
+
+
+<!-- bootstrapでグリッド9 -->
+<% @images.each do |image| %>
+	<p>title</p>
+	<span><%= link_to image.title, image_path(image.id) %></span>
+
+<% end %>
