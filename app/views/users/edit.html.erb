@@ -1,2 +1,10 @@
 <h1>Users#edit</h1>
 <p>Find me in app/views/users/edit.html.erb</p>
+
+<%= form_for(@user) do |f| %>
+	<%= f.email_field :email, autofocus: true, placeholder:"メールアドレス" %>
+	<br>
+	<%= f.text_field :name, autofocus: true, placeholder:"名前" %>
+	<br>
+	<%= f.submit "保存する" %>
+<% end %>
