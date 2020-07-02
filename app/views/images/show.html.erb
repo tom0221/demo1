@@ -1,5 +1,15 @@
 <p>showページ</p>
 
+	<div><%= attachment_image_tag @image, :image %></div>
 
-	<span><%= @image.title %></span>
-	<span><%= @image.boby %></span>
+	<div>
+		<span><%= @image.title %></span>
+		<span><%= @image.body %></span>
+		<span>Post By<%= @image.user.name %></span>
+	</div>
+
+
+	<% if @image.user == current_user %>
+		<%= link_to "削除する", image_path(@image.id), method: :delete %>
+	<% end %>
+
