@@ -39,6 +39,22 @@
       </div>
     </header>
     <main class="main">
+        <!-- ログインエラー時のflashメッセージ -->
+      <% if flash[:alert] %>
+        <div class="alert">
+          <%= alert %>
+        </div>
+      <% end %>
+
+  <!-- flashサクセスメッセージ  -->
+      <br>
+      <br>
+      <% if flash[:notice] %>
+        <div class="flash">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
       <%= yield %>
     </main>
 
