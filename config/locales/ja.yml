@@ -7,3 +7,10 @@ ja:
         name: ユーザー名
         email: メールアドレス
         password: パスワード
+
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: "が空になっています"
