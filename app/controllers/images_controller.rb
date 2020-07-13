@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
-
+	  before_action :authenticate_user!
 	def new
-		@book = Book.new
+		@image = Images.new
 	end
 
 	def create
