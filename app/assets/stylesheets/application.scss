@@ -16,6 +16,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+*{
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
 .head{
 	background-color: gray;
 	width:100%;
@@ -32,3 +36,8 @@ footer{
 	height: 85px;
 }
 
+#container{
+  height: 380px;
+  width:70%;
+  margin:0 auto;
+}

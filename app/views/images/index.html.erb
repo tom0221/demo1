@@ -1,28 +1,30 @@
-<p>imagesのindexページ予定</p>
+<h2>Library一覧</h2>
 
 
-<!-- bootstrapでグリッド3 -->
-<%= form_for(@image) do |f| %>
+	<!-- bootstrapでグリッド3 -->
+	<div class="col-lg-3" style="background-color: orange;">
+	<%= form_for(@image) do |f| %>
 
-	<% if @image.errors.any? %>
-		<%= @image.errors.count %>件のエラーが発生しました。
-		<%= @image.errors.full_messages.each do |message| %>
-			<%= message %>
+		<% if @image.errors.any? %>
+			<%= @image.errors.count %>件のエラーが発生しました。
+			<%= @image.errors.full_messages.each do |message| %>
+				<%= message %>
+			<% end %>
 		<% end %>
+
+		<div><%= f.attachment_field :image %></div><br>
+		<div><%= f.text_field :title %></div><br>
+		<div><%= f.text_area :body %>
+				 <%= f.submit %>
+		</div>
+
 	<% end %>
 
-	<div><%= f.attachment_field :image %></div><br>
-	<div><%= f.text_field :title %></div><br>
-	<div><%= f.text_area :body %>
-			 <%= f.submit %>
-	</div>
 
-<% end %>
-
-
-<!-- bootstrapでグリッド9 -->
-<% @images.each do |image| %>
-	<p>title</p>
-		<%= attachment_image_tag image, :image, size: "80x80" %>
-	<span><%= link_to image.title, image_path(image.id) %></span>
-<% end %>
+	<!-- bootstrapでグリッド9 -->
+	<div class="col-lg-9" style="background-color: silver;">
+	<% @images.each do |image| %>
+		<p>title</p>
+			<%= attachment_image_tag image, :image, size: "80x80" %>
+		<span><%= link_to image.title, image_path(image.id) %></span>
+	<% end %>
