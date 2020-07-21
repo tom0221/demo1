@@ -74,5 +74,6 @@ gem 'refile-mini_magick'
 
 #エラーメッセージの日本語化
 gem 'rails-i18n'
+# gem 'devise-i18n-views'
 
 
