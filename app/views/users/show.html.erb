@@ -1,10 +1,11 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>マイページ</h1>
 
 
 <!-- user表示させたい項目を記述する -->
+<h4>
 	<%= attachment_image_tag @user, :profile_image, size:"60x60" %>
 
 	<%= @user.name%>
 	<%= @user.email %>
 	<%= link_to "情報を編集する", edit_user_path(@user.id) %>
+</h4>
