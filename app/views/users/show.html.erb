@@ -7,5 +7,9 @@
 
 	<%= @user.name%>
 	<%= @user.email %>
-	<%= link_to "情報を編集する", edit_user_path(@user.id) %>
+
+	<!-- 自分だったら表示させる！ -->
+	<% if @user == current_user %>
+		<%= link_to "情報を編集する", edit_user_path(@user.id) %>
+	<% end %>
 </h4>
