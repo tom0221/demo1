@@ -1,11 +1,12 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h2>編集ページ</h2>
 
 <%= form_for(@user) do |f| %>
 	<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+	<br><br>
 	<%= f.email_field :email, autofocus: true, placeholder:"メールアドレス" %>
-	<br>
+	<br><br>
 	<%= f.text_field :name, autofocus: true, placeholder:"名前" %>
-	<br>
+
+	<br><br>
 	<%= f.submit "保存する" %>
 <% end %>
