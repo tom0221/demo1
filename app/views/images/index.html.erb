@@ -1,10 +1,10 @@
-<h2>Library一覧</h2>
+<h2>〜 Library一覧 〜</h2>
 
 <div class="container">
   <div class="row">
 
 		<!-- bootstrapでグリッド3 -->
-		<div class="col-md-3" style="background-color: orange;">
+		<div class="col-md-3" style="background-color: #eaf4ff;">
 			<%= form_for(@image) do |f| %>
 				<%= f.attachment_field :image %><br>
 				<%= f.text_field :title %><br>
@@ -19,7 +19,7 @@
 
 
 		<!-- bootstrapでグリッド9 -->
-		<div class="col-md-9" style="background-color: red;">
+		<div class="col-md-9" style="background-color: #dbdbff;">
 			<% @images.each do |image| %>
 					<p>title</p>
 						<%= attachment_image_tag image, :image, size: "120x120" %>
