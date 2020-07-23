@@ -7,9 +7,12 @@ class ImagesController < ApplicationController
 	def create
 		@image = Image.new(image_params)
 		@image.user_id = current_user.id
+		# 条件分岐
 		if @image.save
+			flash[:notice]
 			redirect_to images_path
 		else
+			flash[:notice]
 			render :index
 		end
 	end
