@@ -7,7 +7,6 @@ class ImagesController < ApplicationController
 	def create
 		@image = Image.new(image_params)
 		@image.user_id = current_user.id
-		# 条件分岐
 		if @image.save
 			flash[:notice]
 			redirect_to images_path
@@ -28,11 +27,9 @@ class ImagesController < ApplicationController
 	end
 
 	def edit
-		
 	end
 
 	def update
-		
 	end
 
 	def destroy
