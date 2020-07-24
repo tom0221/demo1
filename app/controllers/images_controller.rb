@@ -8,8 +8,10 @@ class ImagesController < ApplicationController
 		@image = Image.new(image_params)
 		@image.user_id = current_user.id
 		if @image.save
+			flash[:notice]
 			redirect_to images_path
 		else
+			flash[:notice]
 			render :index
 		end
 	end
@@ -25,11 +27,9 @@ class ImagesController < ApplicationController
 	end
 
 	def edit
-		
 	end
 
 	def update
-		
 	end
 
 	def destroy
