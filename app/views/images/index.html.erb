@@ -20,10 +20,13 @@
 
 		<!-- bootstrapでグリッド9 -->
 		<div class="col-md-9" style="background-color: #dbdbff;">
-			<% @images.each do |image| %>
-				<p>title</p>
-					<%= attachment_image_tag image, :image, size: "120x120" %>
-				<span><%= link_to image.title, image_path(image.id) %></span>
+			<!-- 一旦ノーメソッド回避のif文 -->
+			<% if @images.present? %>
+				<% @images.each do |image| %>
+					<p>title</p>
+						<%= attachment_image_tag image, :image, size: "120x120" %>
+					<span><%= link_to image.title, image_path(image.id) %></span>
+				<% end %>
 			<% end %>
 		</div>
 

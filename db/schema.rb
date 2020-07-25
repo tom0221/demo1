@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_30_052531) do
+ActiveRecord::Schema.define(version: 2020_07_24_143901) do
+
+  create_table "image_memos", force: :cascade do |t|
+    t.text "memo"
+    t.integer "user_id"
+    t.integer "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "images", force: :cascade do |t|
     t.string "title"
