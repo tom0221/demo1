@@ -5,11 +5,22 @@
 	<div>
 		<span><%= @image.title %></span>
 		<span><%= @image.body %></span>
-		<span>Post By<%= @image.user.name %></span>
+		<span>Post By <%= @image.user.name %></span>
 	</div>
 
 	<!-- 自分のimageであれば削除できるようにする -->
 	<% if @image.user == current_user %>
 		<%= link_to "削除する", image_path(@image.id), method: :delete %>
+	<!-- コメント件数表示 -->
+		<%= @image.image_comments.count %>件のメモ
 	<% end %>
 
+
+	<!-- メモ追記一覧表示 -->
+	<ol>
+		<%= @image.image_comments.each do |image_comment| %>
+			<li><%= image_comment.user.name %></li>
+			<!-- <li><%= image.created_at.strftime('%Y/%m/%d') %></li> -->
+			<li><%= image.comment.memo %></li>
+		<% end %>
+	</ol>
