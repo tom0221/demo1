@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_07_24_143901) do
 
-  create_table "image_memos", force: :cascade do |t|
+  create_table "image_comments", force: :cascade do |t|
     t.text "memo"
     t.integer "user_id"
     t.integer "image_id"
