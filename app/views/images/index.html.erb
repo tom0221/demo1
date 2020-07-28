@@ -26,6 +26,8 @@
 					<p>title</p>
 						<%= attachment_image_tag image, :image, size: "120x120" %>
 					<span><%= link_to image.title, image_path(image.id) %></span>
+					<p>    <%= link_to "#{image.image_comments.count} コメント", image_path(image.id) %>
+</p>
 				<% end %>
 			<% end %>
 		</div>
