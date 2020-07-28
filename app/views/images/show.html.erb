@@ -20,7 +20,13 @@
 	<ol>
 		<%= @image.image_comments.each do |image_comment| %>
 			<li><%= image_comment.user.name %></li>
-			<!-- <li><%= image.created_at.strftime('%Y/%m/%d') %></li> -->
+			<li><%= image.created_at.strftime('%Y/%m/%d') %></li>
 			<li><%= image.comment.memo %></li>
 		<% end %>
 	</ol>
+
+	<!-- コメント入力フォーム -->
+	<%= form_for [@image, @image_comment] do |f| %>
+		<%= f.text_area :comment, rows:'4', class: "form-control",placeholder: "メモ追記" %>
+		<%= f.submit "追加する" %>
+	<% end %>
