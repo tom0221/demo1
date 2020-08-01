@@ -27,6 +27,6 @@
 
 	<!-- コメント入力フォーム -->
 	<%= form_for [@image, @image_comment] do |f| %>
-		<%= f.text_area :comment, rows:'4', class: "form-control",placeholder: "メモ追記" %>
+		<%= f.text_area :memo, rows:'4', class: "form-control",placeholder: "メモ追記" %>
 		<%= f.submit "追加する" %>
 	<% end %>
