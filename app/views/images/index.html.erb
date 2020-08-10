@@ -1,0 +1,36 @@
+<h2>〜 Library一覧 〜</h2>
+
+<div class="container">
+  <div class="row">
+
+		<!-- bootstrapでグリッド3 -->
+		<div class="col-md-3" style="background-color: #eaf4ff;">
+			<%= form_for(@image) do |f| %>
+				<%= f.attachment_field :image %><br>
+				<%= f.text_field :title %><br>
+				<br>
+				<%= f.text_area :body %>
+							<%= f.submit %>
+
+			<% end %>
+
+		</div>
+
+
+
+		<!-- bootstrapでグリッド9 -->
+		<div class="col-md-9" style="background-color: #dbdbff;">
+			<!-- 一旦ノーメソッド回避のif文 -->
+			<% if @images.present? %>
+				<% @images.each do |image| %>
+					<p>title</p>
+						<%= attachment_image_tag image, :image, size: "120x120" %>
+					<span><%= link_to image.title, image_path(image.id) %></span>
+					<p>    <%= link_to "#{image.image_comments.count} コメント", image_path(image.id) %>
+</p>
+				<% end %>
+			<% end %>
+		</div>
+
+	</div>
+</div>

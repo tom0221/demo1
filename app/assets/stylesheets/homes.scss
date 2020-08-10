@@ -1,0 +1,34 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+	text-align: center;
+}
+
+h2{
+	// text-align: center;
+	font-style: italic;
+}
+
+.welcome-title{
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.image1 {
+  background-image: url(image1.jpg);
+  // height: 400px;
+}
+.image2 {
+  background-image: url(image2.jpg);
+}
+.image3 {
+  background-image: url(image3.jpg);
+}
+.image4 {
+  background-image: url(image4.jpg);
+}
+
+.about-sentence{
+	margin-top:20px;
+}

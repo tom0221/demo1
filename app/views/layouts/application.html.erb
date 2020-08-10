@@ -7,9 +7,68 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300 rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+  <!-- ヘッダー部分 -->
+    <header class="head">
+      <div id="slidemenu">
+        <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
+          <% if user_signed_in? %>
+            <li class="">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            </li>
+            <li class="">
+              <%= link_to "一覧ページへ", images_path %>
+            </li>
+            <li class="">
+              <%= link_to "マイページ", user_path(current_user) %>
+            </li>
+          <% else %>
+            <li class="btn btn-warning btn-sm">
+              <%= link_to "About", about_path %>
+            </li>
+            <li class="btn btn-warning btn-sm">
+              <%= link_to "新規登録", new_user_registration_path %>
+            </li>
+            <li class="btn btn-warning btn-sm">
+              <%= link_to "ログイン", new_user_session_path %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </header>
+    <main class="main">
+        <!-- ログインエラー時のflashメッセージ -->
+      <% if flash[:alert] %>
+        <div class="alert">
+          <%= alert %>
+        </div>
+      <% end %>
+
+  <!-- flashサクセスメッセージ  -->
+      <br>
+      <br>
+      <% if flash[:notice] %>
+        <div class="flash">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
+      <% if flash[:notice] %>
+        <div class="flash">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </main>
+
+    <footer class=""></footer>
+
+
   </body>
 </html>
